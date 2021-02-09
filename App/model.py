@@ -25,6 +25,7 @@
  """
 
 
+import time as tm
 import config as cf
 from DISClib.ADT import list as lt
 assert cf
@@ -71,3 +72,15 @@ def createTagList():
     """
     taglist = lt.newList(datastructure='SINGLE_LINKED')
     return taglist
+
+
+def test(books: lt):
+    # Test 1, addfirst
+    for i in range(0, lt.size(books)):
+        t1 = time.time_ns()
+        lt.addFirst(books, {"original_title": "Libro imaginario"})
+        book = lt.getElement(books, i)
+        print(book["original_title"])
+
+#CamelCase: nombrefuncionPrueba()
+# Underscore: nombre_funcion_prueba()
